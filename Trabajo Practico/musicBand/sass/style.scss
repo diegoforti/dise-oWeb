@@ -1,0 +1,305 @@
+@import "reset";
+@import "variables";
+@import url("http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|family=Oswald:700');
+
+h2{
+    font-size: 3em;
+    font-family: $font-family-Principal;
+    margin-bottom: 0;    
+    text-align: center;
+}
+h3{
+    font-size: 3em;
+    font-family: $font-family-Principal;
+    text-align: center;
+    color: $color-h3;
+    margin: 0;
+}
+
+h2::first-letter {
+    text-transform: capitalize;
+}
+
+.subrayado {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+}
+
+.subrayado::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: black;
+    transition: width .3s;
+}
+
+.subrayado:hover::after {
+    width: 100%;
+    //transition: width .3s;
+}
+
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    
+    ul{
+        display: flex;
+        list-style: none;
+        padding: 0;   
+        
+        a {
+            display: block;
+            text-decoration: none;
+            padding: .5em 1em;
+            font-family: $font-family-Principal;
+            font-size: 12px;
+            color: black;
+        }
+    }
+    
+}
+
+.ion-social-facebook:hover {
+    opacity: 0.7;
+    color: $color-facebook;
+}
+ 
+.ion-social-youtube:hover {
+    opacity: 0.7;
+    color: $color-youtube;
+}
+
+/* Header */
+
+header{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    background-color: $color-background;    
+    
+    section{
+        display: flex;
+        margin-top: 20px;
+        
+    }
+    
+    h1{
+        margin: auto;
+        font-size: 4em;
+        font-family: $font-family-Principal;
+        text-transform: uppercase;
+        
+        span{
+            display: block;
+            color: white;
+        }
+    }
+}
+
+
+/* Body */
+
+/* Section sectCurt */
+div{
+    display: flex;
+}
+.sectCurt{ 
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px 7em;  
+    background-color: $color-background-section;
+
+    .imgLeft{
+        height: auto;
+    }
+    
+    .artCurt{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10%;        
+        h2{
+            font-size: 2em;
+            padding: 10px 10px;
+            width: 100%;
+        }
+        p{
+            font-family: $font-family-Secundaria;
+            padding: 10px 10px;
+            text-align: justify;
+            line-height: 1.2;            
+            color: $color-p;
+        }
+    }
+}
+
+/* Footer */
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: $color-background;
+    padding: 0px 7em;  
+    
+    .sectFooter{
+        display: flex;
+        flex-direction: column;
+        padding-top: 1em;
+
+        h2{
+            margin-top: 30px;
+        }
+        h3{
+            margin-bottom: 15px;
+        }
+        
+        hr { 
+            border-top: 2px dotted white;
+            border-bottom: none;
+            width: 45%;
+        } 
+    }
+
+    .sectSocial{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+
+        .spanSuscribe{
+            display: flex;
+            flex-flow: row wrap;
+            height: 32px;
+            margin: 30px 0;
+
+            span{
+                color: white;
+                background: black;
+                font-size: 1.3em;
+                font-family: $font-family-Principal;
+                padding: 5px;
+            }
+            input{
+                background: none;
+                border: solid 3px black;
+                
+            }
+        }
+
+        .social{
+            @extend nav;
+            
+            ul a{
+                font-size: 45px;
+                padding: .5em .5em;
+            }
+        }
+    }
+    
+    .sectNavFooter{
+        display: flex;
+        flex-direction: row;
+        
+        small{
+            color: white;
+            font-family: $font-family-Principal;
+            width: 50%;
+            line-height: 1.2;   
+        }
+        
+        .navFooter{
+            @extend nav;
+            width: 50%;
+            justify-content: center;
+
+            .subrayado {
+                color: white;
+            }
+            
+            .subrayado::after {
+                background: white;
+            }
+            
+            ul{
+                li a{
+                    color: white;    
+                }
+            } 
+            
+        }
+    }
+
+    div{
+        display: flex;
+        justify-content: center; 
+        .imagenFooter{
+            float: left;
+            margin-bottom: -26px;    
+        }
+    }
+
+
+}
+
+/* pantallas chicas */
+@media screen and (max-width: 768px) {
+
+    header{
+        flex-direction: column;
+
+        h1{
+            padding: 1em 0;
+            font-size: 2em;
+        }
+        .guitarra{
+            display: none;
+        }
+    }
+    .sectCurt{ 
+        flex-direction: column;
+        padding: 0; 
+        height: auto;
+        
+        .imgLeft{
+            max-width: 100%;
+        }
+    }
+
+    footer{
+        flex-direction: column;
+        padding: 0; 
+        h2{
+            font-size: 2em;
+        }
+        h3{
+            font-size: 1.1em;
+        }
+
+        .sectNavFooter{
+            flex-direction: column;
+
+
+            small{
+                display: flex;
+                justify-content: center; 
+                padding: 0;
+                width: 100%;
+            }
+            
+            .navFooter{
+                justify-content: center;            
+                float: none;
+                width: 100%;                
+            }
+        }
+
+        .imagenFooter{
+           display: none; 
+        }
+       
+    }
+
+    
+}
+
