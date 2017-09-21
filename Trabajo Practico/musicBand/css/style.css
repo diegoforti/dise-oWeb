@@ -14,6 +14,12 @@ h3 {
   color: white;
   margin: 0; }
 
+h4 {
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS", "sans-serif";
+  text-align: justify;
+  line-height: 1.2;
+  color: #867E7C; }
+
 h2::first-letter {
   text-transform: capitalize; }
 
@@ -45,7 +51,7 @@ nav, footer .sectSocial .social, footer .sectNavFooter .navFooter {
       text-decoration: none;
       padding: .5em 1em;
       font-family: "Open Sans Condensed", sans-serif;
-      font-size: 12px;
+      font-size: 13px;
       color: black; }
 
 .ion-social-facebook:hover {
@@ -55,6 +61,24 @@ nav, footer .sectSocial .social, footer .sectNavFooter .navFooter {
 .ion-social-youtube:hover {
   opacity: 0.7;
   color: #ff0000; }
+
+.aListen:hover {
+  opacity: 0.6; }
+
+.aBuy:hover {
+  opacity: 0.6; }
+
+.point {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #E4DCDA;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  text-align: center; }
+
+small {
+  font-size: 14px; }
 
 /* Header */
 header {
@@ -75,31 +99,102 @@ header {
       color: white; }
 
 /* Body */
-/* Section sectCurt */
 div {
   display: flex; }
 
+p, .sectMusic .leftMusic th, .sectMusic .leftMusic td, .sectMusic .rightMusic th, .sectMusic .rightMusic td {
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS", "sans-serif";
+  padding: 10px 10px;
+  text-align: justify;
+  line-height: 1.2;
+  color: #867E7C; }
+
+.imgLeft {
+  height: auto; }
+
+article h2 {
+  font-size: 1.7em;
+  padding: 10px 10px;
+  width: 100%; }
+
+.button, .aListen, .aBuy {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 7px 17px;
+  font-size: 12px; }
+
+.aListen {
+  background-color: #E4DCDA;
+  color: #867E7C; }
+
+.aBuy {
+  background-color: #958178;
+  color: white; }
+
+.noSelect {
+  color: #E4DCDA; }
+
+/* Section sectCurt */
 .sectCurt {
   display: flex;
   justify-content: space-evenly;
-  padding: 0px 7em;
+  padding: 4% 7em 0 7em;
   background-color: #f3efee; }
-  .sectCurt .imgLeft {
-    height: auto; }
   .sectCurt .artCurt {
     display: flex;
     flex-wrap: wrap;
     padding: 10%; }
-    .sectCurt .artCurt h2 {
-      font-size: 2em;
-      padding: 10px 10px;
+
+/* Section sectMusic */
+.sectMusic {
+  display: flex;
+  padding: 4% 7em;
+  background-color: #F8F8F8; }
+  .sectMusic .leftMusic {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .sectMusic .leftMusic img {
+      width: 50%; }
+    .sectMusic .leftMusic h2 {
+      text-align: left;
+      margin: 20px 0; }
+    .sectMusic .leftMusic table {
+      align-self: left;
+      border-collapse: collapse;
+      width: 80%; }
+    .sectMusic .leftMusic th, .sectMusic .leftMusic td {
+      padding: 8px;
+      text-align: left; }
+  .sectMusic .rightMusic {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .sectMusic .rightMusic h2 {
+      text-align: left;
+      margin: 20px 0; }
+    .sectMusic .rightMusic h4 {
+      width: 100%;
+      margin: 10px;
+      font-size: 0.8em;
+      font-weight: bold; }
+    .sectMusic .rightMusic p, .sectMusic .rightMusic th, .sectMusic .rightMusic td {
+      font-style: italic;
       width: 100%; }
-    .sectCurt .artCurt p {
-      font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS", "sans-serif";
-      padding: 10px 10px;
-      text-align: justify;
-      line-height: 1.2;
-      color: #867E7C; }
+    .sectMusic .rightMusic table {
+      align-self: left;
+      border-collapse: collapse;
+      width: 100%; }
+    .sectMusic .rightMusic th, .sectMusic .rightMusic td {
+      padding: 1px;
+      text-align: left;
+      text-transform: capitalize;
+      width: 0%;
+      font-size: small; }
 
 /* Footer */
 footer {
@@ -178,7 +273,12 @@ footer {
     padding: 0;
     height: auto; }
     .sectCurt .imgLeft {
+      height: auto;
       max-width: 100%; }
+  .sectMusic {
+    flex-direction: column;
+    padding: 0;
+    height: auto; }
   footer {
     flex-direction: column;
     padding: 0; }

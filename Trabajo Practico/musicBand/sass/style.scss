@@ -9,12 +9,20 @@ h2{
     margin-bottom: 0;    
     text-align: center;
 }
+
 h3{
     font-size: 3em;
     font-family: $font-family-Principal;
     text-align: center;
     color: $color-h3;
     margin: 0;
+}
+
+h4{
+    font-family: $font-family-Secundaria;
+    text-align: justify;
+    line-height: 1.2;            
+    color: $color-p;
 }
 
 h2::first-letter {
@@ -41,7 +49,6 @@ h2::first-letter {
     //transition: width .3s;
 }
 
-
 nav {
     display: flex;
     justify-content: flex-start;
@@ -56,7 +63,7 @@ nav {
             text-decoration: none;
             padding: .5em 1em;
             font-family: $font-family-Principal;
-            font-size: 12px;
+            font-size: 13px;
             color: black;
         }
     }
@@ -71,6 +78,28 @@ nav {
 .ion-social-youtube:hover {
     opacity: 0.7;
     color: $color-youtube;
+}
+
+.aListen:hover {
+    opacity: 0.6;
+}
+
+.aBuy:hover {
+    opacity: 0.6;
+}
+
+.point{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: $color-botton-listen;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-align: center;
+}
+
+small{
+    font-size: 14px;
 }
 
 /* Header */
@@ -103,36 +132,142 @@ header{
 
 /* Body */
 
-/* Section sectCurt */
 div{
     display: flex;
 }
+p{
+    font-family: $font-family-Secundaria;
+    padding: 10px 10px;
+    text-align: justify;
+    line-height: 1.2;            
+    color: $color-p;
+}
+.imgLeft{
+    height: auto;
+}
+
+article h2{
+    font-size: 1.7em;
+    padding: 10px 10px;
+    width: 100%;
+}
+
+.button{
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 7px 17px;
+    font-size: 12px;
+}
+
+.aListen{
+    @extend .button;
+    background-color: $color-botton-listen; 
+    color: $color-p;
+}
+
+.aBuy{
+    @extend .button;
+    background-color: $color-background;
+    color: white;
+}
+
+.noSelect{
+    color: $color-botton-listen;
+}
+
+/* Section sectCurt */
+
 .sectCurt{ 
     display: flex;
     justify-content: space-evenly;
-    padding: 0px 7em;  
+    padding:  4% 7em 0 7em;  
     background-color: $color-background-section;
 
-    .imgLeft{
-        height: auto;
-    }
     
     .artCurt{
         display: flex;
         flex-wrap: wrap;
         padding: 10%;        
+    }
+}
+
+/* Section sectMusic */
+
+.sectMusic{
+    display: flex;
+    padding: 4% 7em;    
+    background-color: $color-background-section-music;
+    
+    .leftMusic{      
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img{
+            width:50%;
+        }
         h2{
-            font-size: 2em;
-            padding: 10px 10px;
+            text-align: left;
+            margin: 20px 0;
+
+        }
+        table{
+            align-self: left;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        
+        th, td {
+            @extend p;
+            padding: 8px;
+            text-align: left;
+        }
+
+        
+    }
+    .rightMusic{     
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2{
+            text-align: left;
+            margin: 20px 0;
+
+        }
+
+        h4{       
+            width: 100%; 
+            margin: 10px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        p{
+            font-style: italic;
             width: 100%;
         }
-        p{
-            font-family: $font-family-Secundaria;
-            padding: 10px 10px;
-            text-align: justify;
-            line-height: 1.2;            
-            color: $color-p;
+
+        table{
+            align-self: left;
+            border-collapse: collapse;
+            width: 100%;
         }
+        
+        th, td {
+            @extend p;
+            padding: 1px;
+            text-align: left;
+            text-transform: capitalize;
+            width: 0%;
+            font-size: small;
+            
+        }
+
     }
 }
 
@@ -262,8 +397,15 @@ footer{
         height: auto;
         
         .imgLeft{
+            height: auto;
             max-width: 100%;
         }
+    }
+
+    .sectMusic{
+        flex-direction: column;
+        padding: 0; 
+        height: auto;
     }
 
     footer{
