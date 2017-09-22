@@ -161,7 +161,7 @@ article h2 {
       width: 50%; }
     .sectMusic .leftMusic h2 {
       text-align: left;
-      margin: 20px 0; }
+      margin: 10px 0; }
     .sectMusic .leftMusic table {
       align-self: left;
       border-collapse: collapse;
@@ -176,7 +176,7 @@ article h2 {
     align-items: center; }
     .sectMusic .rightMusic h2 {
       text-align: left;
-      margin: 20px 0; }
+      margin: 10px 0; }
     .sectMusic .rightMusic h4 {
       width: 100%;
       margin: 10px;
@@ -277,8 +277,19 @@ footer {
       max-width: 100%; }
   .sectMusic {
     flex-direction: column;
-    padding: 0;
+    padding: 0 0 30px 0;
     height: auto; }
+    .sectMusic .leftMusic img {
+      width: 100%;
+      margin-top: 30px; }
+    .sectMusic .leftMusic h2 {
+      text-align: center; }
+    .sectMusic .leftMusic table {
+      width: 100%; }
+    .sectMusic .rightMusic h2, .sectMusic .rightMusic h4, .sectMusic .rightMusic p, .sectMusic .rightMusic th, .sectMusic .rightMusic td {
+      text-align: center; }
+    .sectMusic .rightMusic table {
+      width: 100%; }
   footer {
     flex-direction: column;
     padding: 0; }
@@ -286,6 +297,10 @@ footer {
       font-size: 2em; }
     footer h3 {
       font-size: 1.1em; }
+    footer .sectSocial {
+      flex-direction: column; }
+      footer .sectSocial .social {
+        justify-content: space-evenly; }
     footer .sectNavFooter {
       flex-direction: column; }
       footer .sectNavFooter small {
